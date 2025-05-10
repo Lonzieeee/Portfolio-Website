@@ -1,3 +1,4 @@
+import { ExternalLink, Github } from "lucide-react";
 
 const Projects = [
     {
@@ -61,7 +62,13 @@ export const ProjectsSection = () => {
     <p className="text-muted-foreground text-sm mb-4">{Project.description}</p>  
 
 <div className="flex justify-between items-center">
-    <div></div>
+    <div className="flex space-x-3">
+        <a href ={Project.demoUrl}
+       
+        className="text-foreground/80 hover:text-primary transition-colors duration-300"><ExternalLink size={20} /></a>
+         <a href ={Project.githubUrl}className="text-foreground/80 hover:text-primary transition-colors duration-300"><Github size={20}/></a>
+        
+    </div>
     <div>
 
     </div>
