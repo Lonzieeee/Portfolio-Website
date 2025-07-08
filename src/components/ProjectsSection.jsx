@@ -3,22 +3,22 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const Projects = [
     {
         id:1,
-        title: "Just Dried",
-        description: "A responsive e-commerce website for selling dried organic foods, focused on clean design and easy user experience.",
+        title: "Truedote",
+        description: "Truedote is an AI-powered healthcare platform revolutionizing diagnostics with fast, accurate, and accessible tools for hospitals and clinics.",
         image:"/Projects/Project1.png",
-        tags: ["React","Supabase"],
-        demoURL: "https://justdried.vercel.app/",
-        githubUrl:"https://github.com/Lonzieeee/justdried",
+        tags: ["React"],
+        demoURL: "https://truedote.magical.africa/",
+        githubUrl:"https://github.com/Lonzieeee/truedote",
     },
 
     {
         id:2,
-        title: "Jack-n-Jones",
-        description: "A stylish, responsive fashion website showcasing modern menswear with a focus on clean UI and seamless browsing experience.",
+        title: "GridStreak",
+        description: "GridStreak is a clean energy platform using thermal brick technology to convert plastic waste into renewable energy storage, helping stabilize power grids ",
         image:"/Projects/Project2.png",
-        tags: ["React","Supabase"],
-        demoURL: "https://jack-n-jones.vercel.app/",
-        githubUrl:"https://github.com/Lonzieeee/jack-n-jones",
+        tags: ["React"],
+        demoURL: "https://www.gridstreak.com/",
+        githubUrl:"https://github.com/Lonzieeee/GridStreak",
     },
 
     {
@@ -47,7 +47,7 @@ export const ProjectsSection = () => {
                            
                         </div>
 
-                        <div className="p-6">
+                        <div className="p-6 text-left">
                             <div className="flex flex-wrap gap-2 mb-4">
                                 {Project.tags.map((tag) => (
                                     <span className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/20 text-secondart-foreground">
