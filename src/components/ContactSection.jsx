@@ -22,15 +22,16 @@ export const ContactSection = () => {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Have a project in mind or a question? I’m available for
-          collaborations and opportunities—feel free to reach out.
+          Have a project in mind or a question? I’m available for collaborations
+          and opportunities—feel free to reach out.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* LEFT SIDE */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-            <div className="space-y-6 justify-center">
+          <div className="space-y-10 text-left">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold">Contact Information</h3>
+
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />
@@ -76,18 +77,18 @@ export const ContactSection = () => {
 
             <div className="pt-8">
               <h4 className="font-medium mb-4">Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
+              <div className="flex space-x-4">
                 <a href="#" target="_blank" rel="noreferrer">
-                  <Linkedin />
+                  <Linkedin className="hover:text-primary transition" />
                 </a>
                 <a href="#" target="_blank" rel="noreferrer">
-                  <Twitter />
+                  <Twitter className="hover:text-primary transition" />
                 </a>
                 <a href="#" target="_blank" rel="noreferrer">
-                  <Instagram />
+                  <Instagram className="hover:text-primary transition" />
                 </a>
                 <a href="#" target="_blank" rel="noreferrer">
-                  <Facebook />
+                  <Facebook className="hover:text-primary transition" />
                 </a>
               </div>
             </div>
@@ -106,7 +107,7 @@ export const ContactSection = () => {
             <form
               action="https://formspree.io/f/xyzjqwkv"
               method="POST"
-              className="space-y-6"
+              className="space-y-6 text-left"
               onSubmit={() => {
                 setSubmitted(true);
                 setTimeout(() => setSubmitted(false), 5000);
@@ -124,7 +125,7 @@ export const ContactSection = () => {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="Lorna Wanderi..."
                 />
               </div>
@@ -141,7 +142,7 @@ export const ContactSection = () => {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="lorna@gmail.com"
                 />
               </div>
@@ -157,7 +158,7 @@ export const ContactSection = () => {
                   id="message"
                   name="message"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                   placeholder="Hello, I'd like to talk about..."
                 />
               </div>
