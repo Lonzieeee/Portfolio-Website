@@ -1,0 +1,69 @@
+.starBackground {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  border-radius: 9999px;
+  background-color: white;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
+
+
+:global(.dark) .star {
+  background-color: white;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+}
+
+:global(body:not(.dark)) .star {
+  background-color: rgba(139, 92, 246, 0.6);
+  box-shadow: 0 0 8px 2px rgba(139, 92, 246, 0.3);
+}
+
+.meteor {
+  position: absolute;
+  background: linear-gradient(to right, white, white, transparent);
+  border-radius: 9999px;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+  animation: meteor 5s linear infinite;
+}
+
+
+:global(.dark) .meteor {
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0.8), transparent);
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+}
+
+:global(body:not(.dark)) .meteor {
+  background: linear-gradient(to right, rgba(139, 92, 246, 0.9), rgba(139, 92, 246, 0.6), transparent);
+  box-shadow: 0 0 15px 3px rgba(139, 92, 246, 0.4);
+}
+
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes meteor {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(215deg) translateX(-500px);
+    opacity: 0;
+  }
+}

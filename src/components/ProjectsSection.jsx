@@ -1,56 +1,82 @@
+import { useState } from "react";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import styles from "./ProjectsSection.module.css";
 
 const Projects = [
     {
         id:1,
-        title: "Truedote",
-        description: "Truedote is an AI-powered healthcare platform revolutionizing diagnostics with fast, accurate, and accessible tools for hospitals and clinics.",
-        image:"/Projects/Project1.png",
-        tags: ["React"],
-        demoURL: "https://truedote.magical.africa/",
-        githubUrl:"https://github.com/Lonzieeee/truedote",
+        title: "Naturecent",
+        description: "A wellness brand dedicated to harnessing the power of nature through premium organic oils for skin, hair, and body care. Each oil is cold-pressed, pure, and sustainably sourced to nourish, hydrate, and rejuvenate naturally.",
+        media: "/Projects/Naturecent.webm",
+        fallbackImage: "/Projects/Naturecentfallback.png",
+        mediaType: "video",
+        tags: ["React", "E-commerce", "Wellness"],
+        demoURL: "https://naturecent.com/",
     },
 
     {
         id:2,
         title: "GridStreak",
-        description: "GridStreak is a clean energy platform using thermal brick technology to convert plastic waste into renewable energy storage, helping stabilize power grids ",
-        image:"/Projects/Project2.png",
-        tags: ["React"],
+        description: "A clean-energy company that focuses on converting plastic waste into carbon-negative thermal energy storage systems. They develop modular 'thermal brick' technology that stores heat generated from recycled plastic, designed to provide stable, distributed energy solutions for applications such as grid stabilization, resilient healthcare, and cold-chain systems.",
+        media: "/Projects/gridstreak.webm",
+        fallbackImage: "/Projects/gridstreak.png",
+        mediaType: "video",
+        tags: ["React", "Clean Energy", "Sustainability"],
         demoURL: "https://www.gridstreak.com/",
-        githubUrl:"https://github.com/Lonzieeee/GridStreak",
     },
 
     {
         id:3,
-        title: "To Do",
-        description: "A minimal and responsive To-Do web app that lets users add, edit, and manage tasks with a clean, intuitive interface.",
-        image:"/Projects/Project3.png",
-        tags: ["Html", "Css"],
-        demoURL: "https://to-do-ten-eta.vercel.app/",
-        githubUrl:"https://github.com/Lonzieeee/To-Do",
+        title: "PapCon Kenya",
+        description: "One of Kenya's leading manufacturers and suppliers of high-quality paper and stationery products. Established in 1971, the company specializes in producing office and school supplies such as files, envelopes, exercise books, and thermal rolls, as well as offering commercial printing and customized branding services.",
+        media: "/Projects/papconkenya.webm",
+        fallbackImage: "/Projects/papconkenyafallback.png",
+        mediaType: "video",
+        tags: ["React", "E-commerce", "Manufacturing"],
+        demoURL: "https://papconkenya.magical.africa/",
     },
 
 ]
 
 export const ProjectsSection = () => {
-    return<section id="projects" className="py-24 px-24 relative">
-        <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center"> Featured <span className="text-primary"> Projects </span></h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Here are some of my recent projects.</p>
+    const [videoErrors, setVideoErrors] = useState({});
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    const handleVideoError = (projectId) => {
+        setVideoErrors(prev => ({ ...prev, [projectId]: true }));
+    };
+
+    return<section id="projects" className={styles.projects}>
+        <div className={styles.container}>
+            <h2 className={styles.title}> Featured <span className={styles.primaryText}> Projects </span></h2>
+            <p className={styles.subtitle}>Here are some of my recent projects.</p>
+
+            <div className={styles.grid}>
                 {Projects.map((Project, key) => (
-                    <div key={key} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
-                        <div className="h-48 overflow-hidden">
-                          <img src={Project.image} alt={Project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                           
+                    <div key={key} className={styles.projectCard}>
+                        <div className={styles.imageWrapper}>
+                          {Project.mediaType === "video" && !videoErrors[Project.id] ? (
+                            <video 
+                              src={Project.media} 
+                              className={styles.projectImage}
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              onError={() => handleVideoError(Project.id)}
+                            />
+                          ) : (
+                            <img 
+                              src={Project.mediaType === "video" && Project.fallbackImage ? Project.fallbackImage : Project.media} 
+                              alt={Project.title} 
+                              className={styles.projectImage} 
+                            />
+                          )}
                         </div>
 
-                        <div className="p-6 text-left">
-                            <div className="flex flex-wrap gap-2 mb-4">
+                        <div className={styles.cardContent}>
+                            <div className={styles.tagsList}>
                                 {Project.tags.map((tag) => (
-                                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/20 text-secondart-foreground">
+                                    <span className={styles.tag} key={tag}>
     {tag}                                    
                                     </span>
                                 ))}
@@ -58,18 +84,27 @@ export const ProjectsSection = () => {
                             </div>
                       
 
-    <h3 className="text-xl font-semibold mb-1">{Project.title}</h3>  
-    <p className="text-muted-foreground text-sm mb-4">{Project.description}</p>  
+    <h3 className={styles.projectTitle}>{Project.title}</h3>  
+    <p className={styles.projectDescription}>{Project.description}</p>  
 
-<div className="flex justify-between items-center">
-    <div className="flex space-x-3">
+<div className={styles.linksWrapper}>
+    <div className={styles.links}>
         <a href ={Project.demoURL}
-        target="_blank" className="text-foreground/80 hover:text-primary transition-colors duration-300"><ExternalLink size={20} />
-       
+        target="_blank" 
+        rel="noopener noreferrer"
+        className={styles.link}
+        aria-label={`Visit ${Project.title} website`}>
+          <ExternalLink size={20} />
         </a>
+        {Project.githubUrl && (
          <a href ={Project.githubUrl}
-             target="_blank"className="text-foreground/80 hover:text-primary transition-colors duration-300"><Github size={20}/></a>
-        
+             target="_blank"
+             rel="noopener noreferrer"
+             className={styles.link}
+             aria-label={`View ${Project.title} on GitHub`}>
+            <Github size={20}/>
+          </a>
+        )}
     </div> 
      </div>
 
@@ -81,8 +116,8 @@ export const ProjectsSection = () => {
                 ))}
             </div>
 
-<div className="text-center mt-12">
-    <a  className="cosmic-button w-fit flex items-center mx-auto gap-2" target="_blank"href="https://github.com/Lonzieeee">Check My Github <ArrowRight size={16}/></a>
+<div className={styles.ctaWrapper}>
+    <a  className={styles.githubButton} target="_blank"href="https://github.com/Lonzieeee">Check My Github <ArrowRight size={16}/></a>
 </div>
 
         </div>

@@ -1,0 +1,41 @@
+.themeToggle {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 50;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  background: hsl(0 0% 100%);
+  border: 1px solid hsl(214 32% 91%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:global(.dark) .themeToggle {
+  background: hsl(222 47% 8%);
+  border-color: hsl(217 33% 20%);
+}
+
+.themeToggle:hover {
+  background: hsl(0 0% 100% / 0.8);
+  transform: scale(1.05);
+}
+
+:global(.dark) .themeToggle:hover {
+  background: hsl(222 47% 8% / 0.8);
+}
+
+.sunIcon {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: #fcd34d;
+}
+
+.moonIcon {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: #1e3a8a;
+}

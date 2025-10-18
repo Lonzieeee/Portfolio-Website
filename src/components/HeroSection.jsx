@@ -1,23 +1,26 @@
-
 import { ArrowDown } from "lucide-react"
-export const HeroSection = () => {
-    return <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-4">
+import styles from "./HeroSection.module.css"
 
-<div className="container max-w-4xl mx-auto text-center z-10">
-    <div className="space-y-6">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
-            <span className="text-primary opacity-0 animate-fade-in-delay-1"> Lorna</span>
-            <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2"> Wanderi</span>
+export const HeroSection = () => {
+    return <section id="hero" className={styles.hero}>
+
+<div className={styles.container}>
+    <div className={styles.content}>
+        <h1 className={styles.title}>
+            <span className={styles.fadeIn}> Hi, I'm</span>
+            <span className={styles.fadeInDelay1}> Lorna</span>
+            <span className={styles.fadeInDelay2}> Wanderi</span>
 
         </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I specialize in front-end development and UI/UX design, building clean, responsive websites and user-friendly interfaces.
-
+        <p className={styles.subtitle}>
+            A passionate Front-End Developer and UI/UX Designer with a strong foundation in networking (CCNA 1–3). I love creating visually appealing, responsive, and user-centered interfaces while understanding how systems connect and communicate at a deeper level.
         </p>
-        <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-            <a href= "#projects" className="cosmic-button">
+        <p className={styles.subtitle2}>
+            I combine technical precision with creative design to build digital experiences that feel seamless and engaging.
+        </p>
+        <div className={styles.ctaWrapper}>
+            <a href= "#projects" className={styles.ctaButton}>
                View My Work 
             </a>
         </div>
@@ -26,9 +29,9 @@ export const HeroSection = () => {
     </div>
 </div>
 
-<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-centre animate-bounce">
-<span className="text-sm text-muted-foreground mb-2"> Scroll </span>
-<ArrowDown className="h-5 w-5 text-primary" />
+<div className={styles.scrollIndicator}>
+<span className={styles.scrollText}> Scroll </span>
+<ArrowDown className={styles.scrollIcon} />
 
 </div>
 

@@ -1,19 +1,40 @@
 import { useState } from "react";
-import { cn } from "../lib/utils";
+import styles from "./SkillsSection.module.css";
+
 const skills = [
-    //frontend
-    { name: "HTML/CSS", Level: "95", category: "frontend"},
-    { name: "JavaScript", Level: "90", category: "frontend"},
-    { name: "React", Level: "80", category: "frontend"},
+    // Core Technical Skills
+    { name: "HTML/CSS", Level: "95", category: "technical"},
+    { name: "JavaScript", Level: "90", category: "technical"},
+    { name: "React.js", Level: "85", category: "technical"},
+    { name: "CSS Modules", Level: "90", category: "technical"},
+    { name: "Git & GitHub", Level: "85", category: "technical"},
+    { name: "MySQL", Level: "75", category: "technical"},
+    { name: "Firebase", Level: "80", category: "technical"},
+    { name: "Flutter & Dart", Level: "70", category: "technical"},
 
-//Tools
+    // Networking Skills
+    { name: "CCNA 1 Fundamentals", Level: "85", category: "networking"},
+    { name: "CCNA 2 Routing", Level: "85", category: "networking"},
+    { name: "CCNA 3 Switching", Level: "85", category: "networking"},
+    { name: "Network Protocols", Level: "80", category: "networking"},
+    { name: "System Architecture", Level: "75", category: "networking"},
 
-{ name: "Git/GitHub", Level: "80", category: "tools"},
-    { name: "Figma", Level: "85", category: "tools"},
-    { name: "Vs Code", Level: "95", category: "tools"},
+    // Design Skills
+    { name: "Figma", Level: "90", category: "design"},
+    { name: "UI Prototyping", Level: "85", category: "design"},
+    { name: "Wireframing", Level: "90", category: "design"},
+    { name: "UX Research", Level: "80", category: "design"},
+    { name: "Design Thinking", Level: "85", category: "design"},
+
+    // Soft Skills
+    { name: "Communication", Level: "95", category: "soft"},
+    { name: "Team Collaboration", Level: "90", category: "soft"},
+    { name: "Problem Solving", Level: "90", category: "soft"},
+    { name: "Time Management", Level: "85", category: "soft"},
+    { name: "Adaptability", Level: "90", category: "soft"},
 ];
 
-const categories = ["all", "frontend", "tools"]
+const categories = ["all", "technical", "networking", "design", "soft"]
 
 
 
@@ -21,20 +42,20 @@ export const SkillsSection = () => {
     const [activeCategory, setAciveCategory] = useState("all");
     const filteredSkills = skills.filter((skill) => activeCategory === "all" || skill.category === activeCategory );
 
-    return <section id="skills" className="py-24 px-4 relative bg-secondary/30">
+    return <section id="skills" className={styles.skills}>
 
-<div className="container mx-auto max-w-5xl">
-    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-        My <span className="text-primary"> Skills</span>
+<div className={styles.container}>
+    <h2 className={styles.title}>
+        My <span className={styles.primaryText}> Skills</span>
     </h2>
 
-    <div className="flex flex-wrap justify-center gap-4 mb-12">
+    <div className={styles.filterWrapper}>
         {categories.map((category, key) =>(
             <button key={key} 
             onClick={() => setAciveCategory(category)}
             
             
-            className={cn("px-5 py-2 rounded-full transition-colors duration-300 capitalize",activeCategory === category ? "bg-primary text-primary-foreground" : "bg-secondary/70 text-foreground hover:bg-secondary" ) }>
+            className={`${styles.filterButton} ${activeCategory === category ? styles.active : styles.inactive}`}>
                 {category}
             </button>
 
@@ -45,25 +66,25 @@ export const SkillsSection = () => {
 
 
 
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div className={styles.grid}>
     
    {filteredSkills.map((skill, key) => (
-    <div key={key} className="bg-card p-6 rounded-lg shadow-xs card-hover">
+    <div key={key} className={styles.skillCard}>
 
 
-<div className="text-left mb-4">
+<div className={styles.skillHeader}>
 
-<h3 className="font-semibold text-lg"> {skill.name}</h3>
+<h3 className={styles.skillName}> {skill.name}</h3>
     </div>
 
-    <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
+    <div className={styles.progressBarOuter}>
 
-    <div className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out"
+    <div className={styles.progressBarInner}
     style={{width: skill.Level + "%"}}/>
         </div>
 
-        <div className="text-right mt-1">
-            <span className="text-sm text-muted-foreground">{skill.Level}%</span>
+        <div className={styles.progressText}>
+            <span className={styles.progressPercentage}>{skill.Level}%</span>
         </div>
 
         </div>

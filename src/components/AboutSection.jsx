@@ -1,30 +1,31 @@
-import { Code, User } from "lucide-react";
-import { Briefcase } from "lucide-react";
+import { Code, User, Network } from "lucide-react";
+import styles from "./AboutSection.module.css";
 
 export const AboutSection = () => {
-    return <section id="about" className="py-24 px-24 relative">
+    return <section id="about" className={styles.about}>
 
-<div className="container mx-auto max-w-5xl">
-    <h2 className="text-3xl md:texttext-4xl font-bold mb-12 text-center">
-        About<span className="text-primary"> Me</span>
+<div className={styles.container}>
+    <h2 className={styles.title}>
+        About<span className={styles.primaryText}> Me</span>
     </h2>
 
-    <div className="grid gri-cols-1 md:grid-cols-2 gap-12 items-centre">
-        <div className="space-y-6 text-left">
+    <div className={styles.grid}>
+        <div className={styles.leftColumn}>
 
-<h3 className="text-2xl font-semibold">Passionate  Developer and UI/UX designer</h3>
-<p className="text-muted-foreground">I'm a Front-End Developer and UI/UX Designer with a passion for building clean, responsive, and user-focused digital experiences. With over a year of hands-on experience, I specialize in creating modern web interfaces using HTML,CSS,JavaScript, and React and I've recently expanded into mobile app development using Flutter and Dart. </p>
-<p className="text-muted-foreground">From websites to mobile apps,I love turning complex ideas into intuitive, visually appealing designs that work seamlessly across all screen sizes. Whether it's a bold new layout or a smooth user journey, I focus on usability and performance.</p>
+<h3 className={styles.subtitle}>Developer, Designer & Network Enthusiast</h3>
+<p className={styles.description}>I'm a Front-End Developer and UI/UX Designer with a unique blend of creative design skills and technical networking knowledge (CCNA 1–3 Certified). With over a year of hands-on experience, I specialize in creating modern web interfaces using HTML, CSS, JavaScript, and React, while understanding how data flows and systems communicate beneath the surface.</p>
+<p className={styles.description}>I've expanded into mobile app development using Flutter and Dart, and work with databases like MySQL and Firebase. My networking background gives me a deeper appreciation for building scalable, efficient applications that truly understand the infrastructure they run on.</p>
+<p className={styles.description}>Whether it's a bold new layout, a smooth user journey, or ensuring seamless connectivity, I combine technical precision with creative design to deliver digital experiences that work beautifully across all devices.</p>
 
 
-<div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+<div className={styles.ctaWrapper}>
 
-<a href="#contact" className="cosmic-button">
+<a href="#contact" className={styles.primaryButton}>
     Get In Touch
 </a>
 
 
-<a href="" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
+<a href="" className={styles.secondaryButton}>
    Download CV
 </a>
 
@@ -34,31 +35,31 @@ export const AboutSection = () => {
 
         </div>
 
-        <div className="grid grid-cols-1 gap-6">
-            <div className="gradient-border p-6 card-hover">
-                <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-primary/10">
-                    <Code className="h-6 w-6 text-primary"/>
+        <div className={styles.rightColumn}>
+            <div className={styles.card}>
+                <div className={styles.cardContent}>
+                    <div className={styles.iconWrapper}>
+                    <Code className={styles.icon}/>
                     
                     </div>
-                    <div className="text-left ">
-                        <h4 className="font-semibold text-lg"> Software Development</h4>
-                        <p className="text-muted-foreground">Creating responsive websites and Mobile applications with modern frameworks.</p>
+                    <div className={styles.cardText}>
+                        <h4 className={styles.cardTitle}> Software Development</h4>
+                        <p className={styles.cardDescription}>Creating responsive websites and Mobile applications with modern frameworks.</p>
                     </div>
 
                 </div>
             </div>
 
-             <div className="gradient-border p-6 card-hover">
+             <div className={styles.card}>
 
-<div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-primary/10">
-                    <User className="h-6 w-6 text-primary"/>
+<div className={styles.cardContent}>
+                    <div className={styles.iconWrapper}>
+                    <User className={styles.icon}/>
                     
                     </div>
-                    <div className="text-left ">
-                        <h4 className="font-semibold text-lg"> UI/UX Design</h4>
-                        <p className="text-muted-foreground">Designing intuitive user interfaces and seamless user experiences.</p>
+                    <div className={styles.cardText}>
+                        <h4 className={styles.cardTitle}> UI/UX Design</h4>
+                        <p className={styles.cardDescription}>Designing intuitive user interfaces and seamless user experiences.</p>
                     </div>
 
                 </div>
@@ -69,17 +70,17 @@ export const AboutSection = () => {
              </div>
 
 
- <div className="gradient-border p-6 card-hover">
+ <div className={styles.card}>
 
 
-<div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-primary/10">
-                    <Briefcase className="h-6 w-6 text-primary"/>
+<div className={styles.cardContent}>
+                    <div className={styles.iconWrapper}>
+                    <Network className={styles.icon}/>
                     
                     </div>
-                    <div className="text-left ">
-                        <h4 className="font-semibold text-lg"> Work Experience</h4>
-                        <p className="text-muted-foreground">Crafting real-world solutions through code and design one project at a time.</p>
+                    <div className={styles.cardText}>
+                        <h4 className={styles.cardTitle}> Network Foundation</h4>
+                        <p className={styles.cardDescription}>CCNA 1–3 Certified with deep understanding of networking protocols and system architecture.</p>
                     </div>
 
                 </div>

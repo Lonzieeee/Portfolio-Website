@@ -1,0 +1,275 @@
+.about {
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+@media (width >= 768px) {
+  .about {
+    padding: 6rem 2rem;
+  }
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+@media (width >= 640px) {
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (width >= 768px) {
+  .title {
+    font-size: 2.25rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.primaryText {
+  color: hsl(250 47% 60%);
+}
+
+:global(.dark) .primaryText {
+  color: hsl(250 65% 65%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (width >= 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+@media (width >= 768px) {
+  .leftColumn {
+    gap: 1.5rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+@media (width >= 640px) {
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.description {
+  color: hsl(222 47% 11% / 0.7);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+:global(.dark) .description {
+  color: hsl(213 31% 91% / 0.7);
+}
+
+@media (width >= 640px) {
+  .description {
+    font-size: 1rem;
+  }
+}
+
+.ctaWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  justify-content: center;
+}
+
+@media (width >= 480px) {
+  .ctaWrapper {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.primaryButton {
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  background-color: hsl(250 47% 60%);
+  color: hsl(210 40% 98%);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+:global(.dark) .primaryButton {
+  background-color: hsl(250 65% 65%);
+  color: hsl(213 31% 91%);
+}
+
+.primaryButton:hover {
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  transform: scale(1.05);
+}
+
+.primaryButton:active {
+  transform: scale(0.95);
+}
+
+.secondaryButton {
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid hsl(250 47% 60%);
+  color: hsl(250 47% 60%);
+  background: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+:global(.dark) .secondaryButton {
+  border-color: hsl(250 65% 65%);
+  color: hsl(250 65% 65%);
+}
+
+.secondaryButton:hover {
+  background-color: hsl(250 47% 60% / 0.1);
+}
+
+:global(.dark) .secondaryButton:hover {
+  background-color: hsl(250 65% 65% / 0.1);
+}
+
+.rightColumn {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (width >= 768px) {
+  .rightColumn {
+    gap: 1.5rem;
+  }
+}
+
+.card {
+  position: relative;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  background-color: hsl(0 0% 100%);
+  border: 1px solid hsl(214 32% 91%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+:global(.dark) .card {
+  background-color: hsl(222 47% 8%);
+  border-color: hsl(217 33% 20%);
+}
+
+@media (width >= 768px) {
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.cardContent {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
+.iconWrapper {
+  padding: 0.65rem;
+  border-radius: 9999px;
+  background-color: hsl(250 47% 60% / 0.1);
+  flex-shrink: 0;
+}
+
+:global(.dark) .iconWrapper {
+  background-color: hsl(250 65% 65% / 0.1);
+}
+
+@media (width >= 768px) {
+  .iconWrapper {
+    padding: 0.75rem;
+  }
+}
+
+.icon {
+  height: 1.35rem;
+  width: 1.35rem;
+  color: hsl(250 47% 60%);
+}
+
+:global(.dark) .icon {
+  color: hsl(250 65% 65%);
+}
+
+@media (width >= 768px) {
+  .icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.cardText {
+  text-align: left;
+}
+
+.cardTitle {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (width >= 768px) {
+  .cardTitle {
+    font-size: 1.125rem;
+  }
+}
+
+.cardDescription {
+  color: hsl(222 47% 11% / 0.7);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+:global(.dark) .cardDescription {
+  color: hsl(213 31% 91% / 0.7);
+}
+
+@media (width >= 768px) {
+  .cardDescription {
+    font-size: 0.875rem;
+  }
+}

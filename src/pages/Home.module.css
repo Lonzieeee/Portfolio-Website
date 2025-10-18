@@ -1,0 +1,11 @@
+.home {
+  min-height: 100vh;
+  background-color: hsl(210 40% 98%);
+  color: hsl(222 47% 11%);
+  overflow-x: hidden;
+}
+
+:global(.dark) .home {
+  background-color: hsl(222 47% 4%);
+  color: hsl(213 31% 91%);
+}

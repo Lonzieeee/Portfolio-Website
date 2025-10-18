@@ -1,0 +1,247 @@
+.skills {
+  padding: 4rem 1rem;
+  position: relative;
+  background-color: hsl(210 40% 98% / 0.3);
+}
+
+:global(.dark) .skills {
+  background-color: hsl(222 47% 4% / 0.3);
+}
+
+@media (width >= 768px) {
+  .skills {
+    padding: 6rem 2rem;
+  }
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+@media (width >= 640px) {
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (width >= 768px) {
+  .title {
+    font-size: 2.25rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.primaryText {
+  color: hsl(250 47% 60%);
+}
+
+:global(.dark) .primaryText {
+  color: hsl(250 65% 65%);
+}
+
+.filterWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (width >= 640px) {
+  .filterWrapper {
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (width >= 768px) {
+  .filterWrapper {
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.filterButton {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+@media (width >= 640px) {
+  .filterButton {
+    padding: 0.5rem 1.15rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (width >= 768px) {
+  .filterButton {
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+  }
+}
+
+.filterButton.active {
+  background-color: hsl(250 47% 60%);
+  color: hsl(210 40% 98%);
+}
+
+:global(.dark) .filterButton.active {
+  background-color: hsl(250 65% 65%);
+  color: hsl(213 31% 91%);
+}
+
+.filterButton.inactive {
+  background-color: hsl(210 40% 98% / 0.7);
+  color: hsl(222 47% 11%);
+}
+
+:global(.dark) .filterButton.inactive {
+  background-color: hsl(222 47% 4% / 0.7);
+  color: hsl(213 31% 91%);
+}
+
+.filterButton.inactive:hover {
+  background-color: hsl(210 40% 98%);
+}
+
+:global(.dark) .filterButton.inactive:hover {
+  background-color: hsl(222 47% 4%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (width >= 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (width >= 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (width >= 1280px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.skillCard {
+  background-color: hsl(0 0% 100%);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+:global(.dark) .skillCard {
+  background-color: hsl(222 47% 8%);
+}
+
+@media (width >= 768px) {
+  .skillCard {
+    padding: 1.5rem;
+  }
+}
+
+.skillCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.skillHeader {
+  text-align: left;
+  margin-bottom: 0.75rem;
+}
+
+@media (width >= 768px) {
+  .skillHeader {
+    margin-bottom: 1rem;
+  }
+}
+
+.skillName {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+@media (width >= 768px) {
+  .skillName {
+    font-size: 1.125rem;
+  }
+}
+
+.progressBarOuter {
+  width: 100%;
+  background-color: hsl(210 40% 98% / 0.5);
+  height: 0.5rem;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+:global(.dark) .progressBarOuter {
+  background-color: hsl(222 47% 4% / 0.5);
+}
+
+.progressBarInner {
+  background-color: hsl(250 47% 60%);
+  height: 0.5rem;
+  border-radius: 9999px;
+  transform-origin: left;
+  animation: grow 1.5s ease-out;
+}
+
+:global(.dark) .progressBarInner {
+  background-color: hsl(250 65% 65%);
+}
+
+.progressText {
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+.progressPercentage {
+  font-size: 0.8rem;
+  color: hsl(222 47% 11% / 0.7);
+}
+
+:global(.dark) .progressPercentage {
+  color: hsl(213 31% 91% / 0.7);
+}
+
+@media (width >= 768px) {
+  .progressPercentage {
+    font-size: 0.875rem;
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

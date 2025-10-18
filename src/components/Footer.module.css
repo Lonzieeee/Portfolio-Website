@@ -1,0 +1,71 @@
+.footer {
+  padding: 2rem 1rem;
+  background-color: hsl(0 0% 100%);
+  position: relative;
+  border-top: 1px solid hsl(214 32% 91%);
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+:global(.dark) .footer {
+  background-color: hsl(222 47% 8%);
+  border-top-color: hsl(217 33% 20%);
+}
+
+@media (width >= 768px) {
+  .footer {
+    padding: 3rem 2rem 2rem;
+    margin-top: 3rem;
+  }
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: hsl(222 47% 11% / 0.7);
+}
+
+:global(.dark) .copyright {
+  color: hsl(213 31% 91% / 0.7);
+}
+
+@media (width >= 768px) {
+  .copyright {
+    font-size: 0.875rem;
+  }
+}
+
+.scrollToTop {
+  padding: 0.45rem;
+  border-radius: 9999px;
+  background-color: hsl(250 47% 60% / 0.1);
+  color: hsl(250 47% 60%);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:global(.dark) .scrollToTop {
+  background-color: hsl(250 65% 65% / 0.1);
+  color: hsl(250 65% 65%);
+}
+
+@media (width >= 768px) {
+  .scrollToTop {
+    padding: 0.5rem;
+  }
+}
+
+.scrollToTop:hover {
+  background-color: hsl(250 47% 60% / 0.2);
+  transform: scale(1.05);
+}
+
+:global(.dark) .scrollToTop:hover {
+  background-color: hsl(250 65% 65% / 0.2);
+}

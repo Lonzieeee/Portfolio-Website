@@ -1,0 +1,281 @@
+.projects {
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+@media (width >= 768px) {
+  .projects {
+    padding: 6rem 2rem;
+  }
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+@media (width >= 640px) {
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (width >= 768px) {
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+.primaryText {
+  color: hsl(250 47% 60%);
+}
+
+:global(.dark) .primaryText {
+  color: hsl(250 65% 65%);
+}
+
+.subtitle {
+  text-align: center;
+  color: hsl(222 47% 11% / 0.7);
+  margin-bottom: 2rem;
+  max-width: 42rem;
+  margin-inline: auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+:global(.dark) .subtitle {
+  color: hsl(213 31% 91% / 0.7);
+}
+
+@media (width >= 640px) {
+  .subtitle {
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (width >= 768px) {
+  .subtitle {
+    margin-bottom: 3rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (width >= 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+@media (width >= 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.projectCard {
+  background-color: hsl(0 0% 100%);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+:global(.dark) .projectCard {
+  background-color: hsl(222 47% 8%);
+}
+
+.projectCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.imageWrapper {
+  height: 11rem;
+  overflow: hidden;
+}
+
+@media (width >= 768px) {
+  .imageWrapper {
+    height: 12rem;
+  }
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.1);
+}
+
+.cardContent {
+  padding: 1.25rem;
+  text-align: left;
+}
+
+@media (width >= 768px) {
+  .cardContent {
+    padding: 1.5rem;
+  }
+}
+
+.tagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (width >= 768px) {
+  .tagsList {
+    margin-bottom: 1rem;
+  }
+}
+
+.tag {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border: 1px solid hsl(214 32% 91%);
+  border-radius: 9999px;
+  background-color: hsl(250 47% 60% / 0.2);
+  color: hsl(222 47% 11%);
+}
+
+:global(.dark) .tag {
+  border-color: hsl(217 33% 20%);
+  background-color: hsl(250 65% 65% / 0.2);
+  color: hsl(213 31% 91%);
+}
+
+@media (width >= 768px) {
+  .tag {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+.projectTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+@media (width >= 768px) {
+  .projectTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.projectDescription {
+  color: hsl(222 47% 11% / 0.7);
+  font-size: 0.825rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+:global(.dark) .projectDescription {
+  color: hsl(213 31% 91% / 0.7);
+}
+
+@media (width >= 768px) {
+  .projectDescription {
+    font-size: 0.875rem;
+  }
+}
+
+.linksWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.link {
+  color: hsl(222 47% 11% / 0.8);
+  transition: color 0.3s ease;
+}
+
+:global(.dark) .link {
+  color: hsl(213 31% 91% / 0.8);
+}
+
+.link:hover {
+  color: hsl(250 47% 60%);
+}
+
+:global(.dark) .link:hover {
+  color: hsl(250 65% 65%);
+}
+
+.ctaWrapper {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+@media (width >= 768px) {
+  .ctaWrapper {
+    margin-top: 3rem;
+  }
+}
+
+.githubButton {
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  background-color: hsl(250 47% 60%);
+  color: hsl(210 40% 98%);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+  font-size: 0.95rem;
+}
+
+:global(.dark) .githubButton {
+  background-color: hsl(250 65% 65%);
+  color: hsl(213 31% 91%);
+}
+
+@media (width >= 640px) {
+  .githubButton {
+    padding: 0.65rem 1.75rem;
+    font-size: 1rem;
+  }
+}
+
+.githubButton:hover {
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  transform: scale(1.05);
+}
+
+.githubButton:active {
+  transform: scale(0.95);
+}

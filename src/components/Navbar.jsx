@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { cn } from "../lib/utils";
 import { Menu } from "lucide-react";
 import { X } from "lucide-react";
+import styles from "./Navbar.module.css";
 
 const navItems = [
     {name: "Home", href: "#hero"},
@@ -35,21 +35,21 @@ useEffect (() => {
 )
 
 
-    return <nav className={cn("fixed w-full z-40 transition-all duration-300", isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5")}>
+    return <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : styles.notScrolled}`}>
 
-<div className="container flex items-centre justify-between">
+<div className={styles.container}>
 
-<a className="text-xl font-bold text-primary flex items-center" href="#hero">
-   <span className="relative z-10">
-    <span className="text-glow text-foreground"> Lorna </span> Portfolio
+<a className={styles.logo} href="#hero">
+   <span className={styles.logoText}>
+    <span className={styles.logoName}> Lorna </span> Portfolio
     </span> 
 </a>
 
 {/* Desktop */}
 
-<div className="hidden md:flex space-x-8">
+<div className={styles.desktopNav}>
     {navItems.map((item, key) =>(
-        <a key = {key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-300">{item.name}</a>
+        <a key = {key} href={item.href} className={styles.navLink}>{item.name}</a>
 
     )
 )}
@@ -58,16 +58,16 @@ useEffect (() => {
 {/* mobile */}
 
 
-<button onClick={() => setIsMenuOpen((prev) => !prev)} className="md:hidden p-2 text-foreground z-50" aria-label={isMenuOpen ? "Close Menu": "Open Menu"}>  {isMenuOpen ? <X size={24}/> : <Menu size={24} />} </button>
+<button onClick={() => setIsMenuOpen((prev) => !prev)} className={styles.menuButton} aria-label={isMenuOpen ? "Close Menu": "Open Menu"}>  {isMenuOpen ? <X size={24}/> : <Menu size={24} />} </button>
 
 
 
 
-<div className={cn("fixed inset-0 bg-background/95 backdruop-blur-md z-40 flex flex-col item-center justify-center","transition-all duration-300 md:hidden", isMenuOpen ? "opacity-100 pointer-event-auto" : "opacity-0 pointer-event-none")}>
+<div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : styles.closed}`}>
 
-<div className="flex flex-col space-y- text-xl">
+<div className={styles.mobileNavList}>
     {navItems.map((item, key) =>(
-        <a key = {key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>{item.name}</a>
+        <a key = {key} href={item.href} className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>{item.name}</a>
 
     )
 )}
